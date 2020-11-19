@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JulianSnippets", "JulianSnippets\JulianSnippets.csproj", "{46F9C6DD-E9B4-41CB-BC62-2D104E5595D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46F9C6DD-E9B4-41CB-BC62-2D104E5595D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46F9C6DD-E9B4-41CB-BC62-2D104E5595D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46F9C6DD-E9B4-41CB-BC62-2D104E5595D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46F9C6DD-E9B4-41CB-BC62-2D104E5595D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73CF0FAF-46BE-4DF9-A059-AE1556E44E49}
+	EndGlobalSection
+EndGlobal
