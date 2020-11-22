@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>aiaf</Title>
+    <Shortcut>aiaf</Shortcut>
+    <Description>Assert Is Assignable From</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>Xunit</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>type</ID>
+        <ToolTip>Object Type</ToolTip>
+        <Default>T</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>object</ID>
+        <ToolTip>Object to Test</ToolTip>
+        <Default>obj</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[Assert.IsAssignableFrom<$type$>($object$);$end$]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

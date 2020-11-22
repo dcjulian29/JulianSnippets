@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>adnt</Title>
+    <Shortcut>adnt</Shortcut>
+    <Description>Assert Does Not Throw</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>Xunit</Namespace>
+      </Import>
+    </Imports>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[Assert.DoesNotThrow(() => { $end$ });]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

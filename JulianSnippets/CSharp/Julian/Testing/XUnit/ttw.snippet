@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>ttw</Title>
+    <Shortcut>ttw</Shortcut>
+    <Description>Test method when a condition is provided.</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>Xunit</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>MethodUnderTest</ID>
+        <ToolTip>Method being tested</ToolTip>
+        <Default>Method</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>ExpectedResult</ID>
+        <ToolTip>Expected Result</ToolTip>
+        <Default>Expected</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>Condition</ID>
+        <ToolTip>Condition</ToolTip>
+        <Default>Condition</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[[Fact]
+public void $MethodUnderTest$_Should_$ExpectedResult$_When_$Condition$()
+{
+    // Arrange
+    $end$
+
+    // Act
+
+    // Assert
+}
+]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

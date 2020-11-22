@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>ctorxml</Title>
+    <Shortcut>ctorxml</Shortcut>
+    <Description>Constructor with XML Documentation</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+
+  <Snippet>
+    <Declarations>
+      <Literal Editable="false">
+        <ID>classname</ID>
+        <ToolTip>Class Name</ToolTip>
+        <Function>ClassName()</Function>
+        <Default>ClassNamePlaceholder</Default>
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[/// <summary>
+/// Initializes a new instance of the <see cref="$classname$" /> class.
+/// </summary>
+public $classname$()
+{
+    $end$
+}
+]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

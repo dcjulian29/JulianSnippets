@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>clog</Title>
+    <Shortcut>clog</Shortcut>
+    <Description>Common Logging Field</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>Common.Logging</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="false">
+        <ID>classname</ID>
+        <ToolTip>Class Name</ToolTip>
+        <Default>ClassNamePlaceholder</Default>
+        <Function>ClassName()</Function>
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[private static readonly ILog _log = LogManager.GetLogger<$classname$>();]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

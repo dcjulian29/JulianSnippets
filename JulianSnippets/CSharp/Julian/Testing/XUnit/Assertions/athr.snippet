@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>athr</Title>
+    <Shortcut>athr</Shortcut>
+    <Description>Assert Throws</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>Xunit</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>exception</ID>
+        <ToolTip>Exception Type</ToolTip>
+        <Default>exception</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[Assert.Throws<$exception$>(() => { $end$ });]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

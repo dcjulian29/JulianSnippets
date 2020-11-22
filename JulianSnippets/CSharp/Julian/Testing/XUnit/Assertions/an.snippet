@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>an</Title>
+    <Shortcut>an</Shortcut>
+    <Description>Assert Null</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>Xunit</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>object</ID>
+        <ToolTip>Object Expected to be Null</ToolTip>
+        <Default>object</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[Assert.Null($object$);$end$]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

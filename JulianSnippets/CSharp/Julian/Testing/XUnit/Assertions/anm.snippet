@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>anm</Title>
+    <Shortcut>anm</Shortcut>
+    <Description>Assert Collection Not Empty</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>Xunit</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>collection</ID>
+        <ToolTip>Collection Expected to be Not Empty</ToolTip>
+        <Default>collection</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[Assert.NotEmpty($collection$);$end$]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

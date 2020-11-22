@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>entityController</Title>
+    <Shortcut>entityController</Shortcut>
+    <Description>A basic controller for an entity</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>System.Web.Http</Namespace>
+      </Import>
+      <Import>
+        <Namespace>ToolKit.Data</Namespace>
+      </Import>
+      <Import>
+        <Namespace>System.Net.Http</Namespace>
+      </Import>
+      <Import>
+        <Namespace>System.Net</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>entity</ID>
+        <ToolTip>Entity Name</ToolTip>
+        <Default>EntityName</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>type</ID>
+        <ToolTip>Entity ID Type</ToolTip>
+        <Default>int</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[/// <summary>
+/// Provide a service to interact with $entity$ Entities
+/// </summary>
+public class $entity$Controller : ApiController
+{
+    private IRepository<T,in TId><$entity$, $type$> _repository;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="$entity$Controller" /> class.
+    /// </summary>
+    /// <param name="repository">A repository for the controller to use during unit testing.</param>
+    public $entity$Controller(IRepository<T,in TId><$entity$, $type$> repository)
+    {
+        _repository = repository;
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="$entity$Controller" /> class.
+    /// </summary>
+    public $entity$Controller()
+    {
+    }
+
+    /// <summary>
+    /// Get the data for the specified entity.
+    /// </summary>
+    /// <param name="id">The $type$ of the entity to get the data for.</param>
+    /// <returns>serialized entity containing the data.</returns>
+    public HttpResponseMessage Get($type$ id)
+    {
+        using (var repository = _repository ?? new Repositories.$entity$Repository())
+        {
+            var entity = repository.FindById(id);
+
+            return entity == null
+                ? new HttpResponseMessage(HttpStatusCode.NotFound)
+                : Request.CreateResponse(HttpStatusCode.OK, entity);
+        }
+    }
+
+    /// <summary>
+    /// Create a new entity.
+    /// </summary>
+    /// <param name="xmlContent">The entity DTO as a string.</param>
+    /// <returns>HTTP Status Code based on the outcome of the action.</returns>
+    public IHttpActionResult Post([FromBodyAttribute]string xmlContent)
+    {
+        var entity = new $entity$(xmlContent);
+
+        using (var repository = _repository ?? new $entity$Repository())
+        {
+            repository.Save(entity);
+        }
+
+        var location = Url.Link(
+            "DefaultApi",
+            new
+            {
+                id = entity.Id.ToString()
+            });
+
+        return Created(location, entity);
+    }
+
+    /// <summary>
+    /// Save the data for the specified entity.
+    /// </summary>
+    /// <param name="id">The ID of the entity to save the data for.</param>
+    /// <param name="xmlContent">The XML containing the data to save.</param>
+    /// <returns>HTTP Status Code based on the outcome of the action.</returns>
+    public IHttpActionResult Put($type$ id, [FromBodyAttribute]string xmlContent)
+    {
+        using (var repository = _repository ?? new $entity$Repository())
+        {
+            var entity = repository.FindById(id);
+
+            if (entity == null)
+            {
+                return NotFound();
+            }
+
+            var xml = new System.Xml.XmlDocument();
+
+            try
+            {
+                xml.LoadXml(xmlContent);
+            }
+            catch (System.Exception)
+            {
+                return BadRequest();
+            }
+
+            entity.ChangeTemplate(xml);
+            repository.Save(entity);
+        }
+
+        return Ok();
+    }
+}
+]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

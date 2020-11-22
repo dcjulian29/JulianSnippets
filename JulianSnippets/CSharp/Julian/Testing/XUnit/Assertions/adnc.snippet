@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>adnc</Title>
+    <Shortcut>adnc</Shortcut>
+    <Description>Assert Does Not Contain</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>Xunit</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>expected</ID>
+        <ToolTip>Expected Value</ToolTip>
+        <Default>expected</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>actual</ID>
+        <ToolTip>Actual Value</ToolTip>
+        <Default>actual</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[Assert.DoesNotContains($expected$, $actual$);$end$]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

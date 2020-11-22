@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>suppressversionattributes</Title>
+    <Shortcut>suppressversionattributes</Shortcut>
+    <Description>Version Attributes are added during the Build Script.</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>System.Diagnostics.CodeAnalysis</Namespace>
+      </Import>
+    </Imports>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[[[assembly:SuppressMessage(
+    "Microsoft.Design",
+    "CA1016:MarkAssembliesWithAssemblyVersion",
+    Justification = "Version Attributes are added during the Build Script.")]]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

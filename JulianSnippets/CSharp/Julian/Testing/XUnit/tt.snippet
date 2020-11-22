@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>tt</Title>
+    <Shortcut>tt</Shortcut>
+    <Description>Test method.</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>Xunit</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>MethodUnderTest</ID>
+        <ToolTip>Method being tested</ToolTip>
+        <Default>method</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>ExpectedResult</ID>
+        <ToolTip>Expected Result</ToolTip>
+        <Default>ExpectedResult</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[[Fact]
+public void $MethodUnderTest$_Should_$ExpectedResult$()
+{
+    // Arrange
+    $end$
+
+    // Act
+
+    // Assert
+
+}
+]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

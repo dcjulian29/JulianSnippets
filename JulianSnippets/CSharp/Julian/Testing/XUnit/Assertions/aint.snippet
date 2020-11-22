@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>aint</Title>
+    <Shortcut>aint</Shortcut>
+    <Description>Assert Is Not Type</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Imports>
+        <Import>
+          <Namespace>Xunit</Namespace>
+        </Import>
+      </Imports>
+      <Literal Editable="true">
+        <ID>type</ID>
+        <ToolTip>Object Type</ToolTip>
+        <Default>T</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>object</ID>
+        <ToolTip>Object to Test</ToolTip>
+        <Default>obj</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[Assert.IsNotType<$type$>($object$);$end$]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

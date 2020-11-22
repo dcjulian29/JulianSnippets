@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>af</Title>
+    <Shortcut>af</Shortcut>
+    <Description>Assert False</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>Xunit</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>condition</ID>
+        <ToolTip>Expected to be false</ToolTip>
+        <Default>expected</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>why</ID>
+        <ToolTip>Why?</ToolTip>
+        <Default>why</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[Assert.False($condition$, $why$);$end$]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>prope</Title>
+    <Shortcut>prope</Shortcut>
+    <Description>A property for an Entity class</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>System.Runtime.Serialization</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>type</ID>
+        <ToolTip>Property Type</ToolTip>
+        <Default>string</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>name</ID>
+        <ToolTip>Property Name</ToolTip>
+        <Default>MyProperty</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[/// <summary>
+/// Gets or sets what this property represents in this entity
+/// </summary>
+[DataMember]
+public virtual $type$ $name$ { get; protected set; }
+]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

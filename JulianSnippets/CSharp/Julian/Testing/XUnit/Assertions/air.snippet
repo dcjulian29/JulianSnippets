@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>air</Title>
+    <Shortcut>air</Shortcut>
+    <Description>Assert In Range</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>Xunit</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>actual</ID>
+        <ToolTip>Actual Object</ToolTip>
+        <Default>actual</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>low</ID>
+        <ToolTip>Bottom of Range</ToolTip>
+        <Default>low</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>high</ID>
+        <ToolTip>Top of Range</ToolTip>
+        <Default>high</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[Assert.InRange($actual$, $low$, $high$);$end$]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

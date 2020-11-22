@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>ckne</Title>
+    <Shortcut>ckne</Shortcut>
+    <Description>Check parameter to be not empty.</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>ToolKit.Validation</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>parameter</ID>
+        <ToolTip>Parameter name to check</ToolTip>
+        <Default>parameter</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[Check.NotEmpty($parameter$, nameof($parameter$));]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

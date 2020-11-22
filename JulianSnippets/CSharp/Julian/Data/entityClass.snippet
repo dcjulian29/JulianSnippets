@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>entityClass</Title>
+    <Shortcut>entityClass</Shortcut>
+    <Description>An Entity Class</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>System</Namespace>
+      </Import>
+      <Import>
+        <Namespace>System.Runtime.Serialization</Namespace>
+      </Import>
+      <Import>
+        <Namespace>ToolKit.Data</Namespace>
+      </Import>
+      <Import>
+        <Namespace>System.Diagnostics.CodeAnalysis</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="false">
+        <ID>classname</ID>
+        <ToolTip>Class Name</ToolTip>
+        <Default>ClassNamePlaceholder</Default>
+        <Function>ClassName()</Function>
+      </Literal>
+      <Literal Editable="true">
+        <ID>type</ID>
+        <ToolTip>Property type</ToolTip>
+        <Default>string</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>name</ID>
+        <ToolTip>Property name</ToolTip>
+        <Default>MyProperty</Default>
+        <Function />
+      </Literal>
+      <Literal Editable="true">
+        <ID>parameter</ID>
+        <ToolTip>Parameter Type</ToolTip>
+        <Default>myProperty</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[/// <summary>
+/// An entity representing ???
+/// </summary>
+[Serializable]
+[DataContract]
+public class $classname$ : Entity
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="$classname$" /> class.
+    /// </summary>
+    /// <param name="$parameter$">A value to pass in to constructor</param>
+    [SuppressMessage("Microsoft.Usage",
+        "CA2214:DoNotCallOverridableMethodsInConstructors",
+        Justification = "Entities Always Have Virtual Members")]
+    public $classname$($type$ $parameter$)
+    {
+        $name$ = $parameter$
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="$classname$" /> class.
+    /// </summary>
+    protected $classname$()
+    {
+    }
+
+    /// <summary>
+    /// Gets or sets what this property represents in this entity
+    /// </summary>
+    [DataMember]
+    public virtual $type$ $name$ { get; protected set; }
+}
+]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

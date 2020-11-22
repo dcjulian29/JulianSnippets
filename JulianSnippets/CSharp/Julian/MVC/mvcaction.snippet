@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>mvcaction</Title>
+    <Shortcut>mvcaction</Shortcut>
+    <Description>An MVC Action Method.</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>action</ID>
+        <ToolTip>Name of the Action</ToolTip>
+        <Default>action</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[public ActionResult $action$()
+{
+    $end$
+
+    return View();
+}]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

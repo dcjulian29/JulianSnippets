@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>entityController</Title>
+    <Shortcut>entityController</Shortcut>
+    <Description>A basic implementation of an entity repository</Description>
+    <Author>Julian Easterling</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Imports>
+      <Import>
+        <Namespace>ToolKit.Data</Namespace>
+      </Import>
+    </Imports>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>Entity</ID>
+        <ToolTip>Entity Name</ToolTip>
+        <Default>EntityName</Default>
+        <Function />
+      </Literal>
+    </Declarations>
+    <Code Language="csharp" Delimiter="$">
+      <![CDATA[/// <summary>
+/// Implementation of the $Entity$ Repository
+/// </summary>
+public class $Entity$Repository : Repository<T,TId><$Entity$, int>
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="$Entity$Repository" /> class.
+    /// </summary>
+    /// <param name="session">A NHibernate session instance.</param>
+    public $Entity$Repository(NHibernate.ISession session)
+    {
+        Context = new NHibernateUnitOfWork(session);
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="$Entity$Repository" /> class.
+    /// </summary>
+    /// <param name="unitOfWork">A Unit Of Work for the Repository Context.</param>
+    public $Entity$Repository(IUnitOfWork unitOfWork)
+    {
+        Context = unitOfWork;
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="$Entity$Repository" /> class.
+    /// </summary>
+    public $Entity$Repository()
+    {
+        Context = new NHibernateUnitOfWork(Database.SessionFactory.OpenSession());
+    }
+}
+]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>
