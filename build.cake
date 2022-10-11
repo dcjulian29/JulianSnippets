@@ -8,7 +8,7 @@ var version = "0.0.0";
 var msbuildSettings = new MSBuildSettings {
     ArgumentCustomization = args => args.Append("/consoleloggerparameters:ErrorsOnly"),
     Configuration = configuration,
-    ToolVersion = MSBuildToolVersion.VS2019,
+    ToolVersion = MSBuildToolVersion.VS2022,
     NodeReuse = false,
     WarningsAsError = true
 }.WithProperty("OutDir", outputDirectory);
@@ -109,7 +109,7 @@ Task("Package")
     .Does(() =>
     {
         CreateDirectory(buildDirectory + "/packages");
-        
+
         CopyFile(outputDirectory + "\\JulianSnippets.vsix", buildDirectory + "/packages/JulianSnippets.vsix");
     });
 
